@@ -1,2 +1,2 @@
 # AutoPartsInventorySystem
-OOP Auto Parts Inventory Management System
+Project starting point
