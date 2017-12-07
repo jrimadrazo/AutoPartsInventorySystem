@@ -1,0 +1,17 @@
+c:\users\jrimadrazo\documents\visual studio 2015\Projects\AddingTables\AddingTables\bin\Debug\AddingTables.exe.config
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\bin\Debug\AutoPartsInventory.mdf
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\bin\Debug\AutoPartsInventory_log.ldf
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\bin\Debug\AddingTables.exe
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\bin\Debug\AddingTables.pdb
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\AddingTables.csprojResolveAssemblyReference.cache
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\MainWindow.g.cs
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\App.g.cs
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\AddingTables_Content.g.cs
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\AddingTables_MarkupCompile.cache
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\AddingTables_MarkupCompile.lref
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\MainWindow.baml
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\AddingTables.g.resources
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\AddingTables.Properties.Resources.resources
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\AddingTables.csproj.GenerateResource.Cache
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\AddingTables.exe
+C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\obj\Debug\AddingTables.pdb
