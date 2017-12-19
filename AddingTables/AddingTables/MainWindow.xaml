@@ -5,8 +5,265 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AddingTables"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Autoparts Inventory System" Height="350" Width="525" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:AutoPartsInventoryDataSet x:Key="autoPartsInventoryDataSet"/>
+        <CollectionViewSource x:Key="pRODUCTViewSource" Source="{Binding PRODUCT, Source={StaticResource autoPartsInventoryDataSet}}"/>
+        <CollectionViewSource x:Key="sUPPLIERViewSource" Source="{Binding SUPPLIER, Source={StaticResource autoPartsInventoryDataSet}}"/>
+        <CollectionViewSource x:Key="oRDERViewSource" Source="{Binding ORDER, Source={StaticResource autoPartsInventoryDataSet}}"/>
+    </Window.Resources>
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" DataContext="{StaticResource pRODUCTViewSource}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0"
+                       Grid.Column="0"
+                       Margin="3,3,3,0"
+                       Text="Parts List"
+                       FontSize="15"/>
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Margin="3,3,3,0"
+                       Text="Part Information"
+                       FontSize="15"/>
+            <ListBox Grid.Row="1"
+                     Grid.Column="0"
+                     Margin="3,0,3,3"
+                     BorderBrush="Gray"
+                     BorderThickness="0,3,0,0"/>
+            -->
+    <!--<ListBox Grid.Row="1"
+                     Grid.Column="1"
+                     Margin="3,0,3,3"
+                     BorderBrush="Gray"
+                     BorderThickness="0,3,0,0"/>-->
+    <!--
+            <Grid Grid.Row="1"
+                  Grid.Column="1">
+                <DataGrid x:Name="pRODUCTDataGrid" 
+                          AutoGenerateColumns="False" 
+                          Grid.Column="1" 
+                          EnableRowVirtualization="True" 
+                          ItemsSource="{Binding}" 
+                          Margin="3,0,3,3" 
+                          RowDetailsVisibilityMode="VisibleWhenSelected" 
+                          Grid.Row="1" 
+                          Height="Auto" 
+                          VerticalAlignment="Stretch">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="product_IDColumn" 
+                                            Binding="{Binding Product_ID}" 
+                                            Header="Product ID" 
+                                            IsReadOnly="True" 
+                                            Width="SizeToHeader"/>
+                        <DataGridTextColumn x:Name="product_NameColumn" 
+                                            Binding="{Binding Product_Name}" 
+                                            Header="Product Name" 
+                                            Width="SizeToHeader"/>
+                        <DataGridTextColumn x:Name="product_TypeColumn" Binding="{Binding Product_Type}" Header="Product Type" Width="SizeToHeader"/>
+                        <DataGridTextColumn x:Name="quantityColumn" Binding="{Binding Quantity}" Header="Quantity" Width="SizeToHeader"/>
+                        <DataGridTextColumn x:Name="colorColumn" Binding="{Binding Color}" Header="Color" Width="SizeToHeader"/>
+                        <DataGridTextColumn x:Name="buying_PriceColumn" Binding="{Binding Buying_Price}" Header="Buying Price" Width="SizeToHeader"/>
+                        <DataGridTextColumn x:Name="selling_PriceColumn" Binding="{Binding Selling_Price}" Header="Selling Price" Width="SizeToHeader"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+        <TextBlock Grid.Row="0"
+                   Margin="3"
+                   Text="Put Tab Here"
+                   FontSize="20"/>
+    </Grid>-->
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Product">
+                <Grid DataContext="{StaticResource pRODUCTViewSource}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="pRODUCTDataGrid" 
+                              Grid.Column="0"
+                              AutoGenerateColumns="False" 
+                              EnableRowVirtualization="True" 
+                              ItemsSource="{Binding}" 
+                              Margin="3" 
+                              RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="pRODUCTDataGrid_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="product_IDColumn" 
+                                                Binding="{Binding Product_ID}" 
+                                                Header="ID" 
+                                                IsReadOnly="True" 
+                                                Width="Auto"/>
+                            <DataGridTextColumn x:Name="product_NameColumn" 
+                                                Binding="{Binding Product_Name}" 
+                                                Header="Product Name" 
+                                                Width="Auto"/>
+                            <!--<DataGridTextColumn x:Name="product_TypeColumn" 
+                                                Binding="{Binding Product_Type}" 
+                                                Header="Product Type" 
+                                                Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="quantityColumn" 
+                                                Binding="{Binding Quantity}" 
+                                                Header="Quantity" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="colorColumn" 
+                                                Binding="{Binding Color}" 
+                                                Header="Color"
+                                                Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="buying_PriceColumn" 
+                                                Binding="{Binding Buying_Price}" 
+                                                Header="Buying Price" 
+                                                Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="selling_PriceColumn" 
+                                                Binding="{Binding Selling_Price}" 
+                                                Header="Selling Price" 
+                                                Width="SizeToHeader"/>-->
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <!--<ListBox Margin="3"
+                             BorderThickness="3"
+                             BorderBrush="Gray"/>-->
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Margin="3" HorizontalAlignment="Right" Text="Product ID: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="3" HorizontalAlignment="Right" Text="Product Name: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="3" HorizontalAlignment="Right" Text="Product Type: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="3" Margin="3" HorizontalAlignment="Right" Text="Quantity: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="4" Margin="3" HorizontalAlignment="Right" Text="Color: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="5" Margin="3" HorizontalAlignment="Right" Text="Buying Price: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="6" Margin="3" HorizontalAlignment="Right" Text="Selling Price: "/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Margin="3" x:Name="productID"/>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Margin="3" x:Name="productName"/>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Margin="3" x:Name="productType"/>
+                        <TextBlock Grid.Column="1" Grid.Row="3" Margin="3" x:Name="qUantity"/>
+                        <TextBlock Grid.Column="1" Grid.Row="4" Margin="3" x:Name="cOlor"/>
+                        <TextBlock Grid.Column="1" Grid.Row="5" Margin="3" x:Name="buyingPrice"/>
+                        <TextBlock Grid.Column="1" Grid.Row="6" Margin="3" x:Name="sellingPrice"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Supplier">
+                <Grid DataContext="{StaticResource sUPPLIERViewSource}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="sUPPLIERDataGrid" 
+                              AutoGenerateColumns="False" 
+                              EnableRowVirtualization="True" 
+                              ItemsSource="{Binding}" 
+                              Margin="3" 
+                              Grid.Column="0"
+                              RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="sUPPLIERDataGrid_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="supplier_IDColumn" 
+                                                Binding="{Binding Supplier_ID}" 
+                                                Header="ID" 
+                                                IsReadOnly="True" 
+                                                Width="Auto"/>
+                            <DataGridTextColumn x:Name="supplier_NameColumn" 
+                                                Binding="{Binding Supplier_Name}"
+                                                Header="Supplier Name" 
+                                                Width="Auto"/>
+                            <!--<DataGridTextColumn x:Name="supplier_DetailsColumn" 
+                                                Binding="{Binding Supplier_Details}" 
+                                                Header="Supplier Details" 
+                                                Width="SizeToHeader"/>-->
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Margin="3" HorizontalAlignment="Right" Text="Supplier ID: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="3" HorizontalAlignment="Right" Text="Supplier Name: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="3" HorizontalAlignment="Right" Text="Details: "/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Margin="3" x:Name="supplierID"/>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Margin="3" x:Name="supplierName"/>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Margin="3" x:Name="dEscription"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Orders">
+                <Grid DataContext="{StaticResource oRDERViewSource}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="oRDERDataGrid" 
+                              AutoGenerateColumns="False" 
+                              EnableRowVirtualization="True" 
+                              ItemsSource="{Binding}" 
+                              Margin="3" 
+                              Grid.Column="0"
+                              RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="oRDERDataGrid_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="order_IDColumn" Binding="{Binding Order_ID}" Header="Order ID" IsReadOnly="True" Width="SizeToHeader"/>
+                            <!--<DataGridTextColumn x:Name="supplier_IDColumn1" Binding="{Binding Supplier_ID}" Header="Supplier ID" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="product_IDColumn1" Binding="{Binding Product_ID}" Header="Product ID" Width="SizeToHeader"/>
+                            <DataGridTemplateColumn x:Name="dateColumn" Header="Date" Width="SizeToHeader">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <DatePicker SelectedDate="{Binding Date, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn x:Name="quantity_OrderedColumn" Binding="{Binding Quantity_Ordered}" Header="Quantity Ordered" Width="SizeToHeader"/>-->
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Margin="3" HorizontalAlignment="Right" Text="Order ID: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="3" HorizontalAlignment="Right" Text="Product ID: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="3" HorizontalAlignment="Right" Text="Supplier ID: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="3" Margin="3" HorizontalAlignment="Right" Text="Date: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="4" Margin="3" HorizontalAlignment="Right" Text="Quantity: "/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Margin="3" x:Name="orderID"/>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Margin="3" x:Name="producTID"/>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Margin="3" x:Name="supplieRID"/>
+                        <TextBlock Grid.Column="1" Grid.Row="3" Margin="3" x:Name="dAte"/>
+                        <TextBlock Grid.Column="1" Grid.Row="4" Margin="3" x:Name="qUAntity"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

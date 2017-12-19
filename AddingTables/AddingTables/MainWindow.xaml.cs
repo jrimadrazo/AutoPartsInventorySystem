@@ -37,11 +37,11 @@ namespace AddingTables
             DataTable dt = new DataTable();
             autoNode1.Fill(dt);
 
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                object obproductname = dt.Rows[i]["Product_Name"];
-                MessageBox.Show(obproductname.ToString());
-            }
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    object obproductname = dt.Rows[i]["Product_Name"];
+            //    MessageBox.Show(obproductname.ToString());
+            //}
 
             //SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\AutoPartsInventory.mdf;Integrated Security=True;Connect Timeout=30;");
             //con1.Open();
@@ -56,6 +56,60 @@ namespace AddingTables
             //command1.Parameters.AddWithValue("@Buying_Price", 125.00);
             //command1.Parameters.AddWithValue("@Selling_Price", 150.00);
             //command1.ExecuteNonQuery();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            AddingTables.AutoPartsInventoryDataSet autoPartsInventoryDataSet = ((AddingTables.AutoPartsInventoryDataSet)(this.FindResource("autoPartsInventoryDataSet")));
+            // Load data into the table PRODUCT. You can modify this code as needed.
+            AddingTables.AutoPartsInventoryDataSetTableAdapters.PRODUCTTableAdapter autoPartsInventoryDataSetPRODUCTTableAdapter = new AddingTables.AutoPartsInventoryDataSetTableAdapters.PRODUCTTableAdapter();
+            autoPartsInventoryDataSetPRODUCTTableAdapter.Fill(autoPartsInventoryDataSet.PRODUCT);
+            System.Windows.Data.CollectionViewSource pRODUCTViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("pRODUCTViewSource")));
+            pRODUCTViewSource.View.MoveCurrentToFirst();
+            // Load data into the table SUPPLIER. You can modify this code as needed.
+            AddingTables.AutoPartsInventoryDataSetTableAdapters.SUPPLIERTableAdapter autoPartsInventoryDataSetSUPPLIERTableAdapter = new AddingTables.AutoPartsInventoryDataSetTableAdapters.SUPPLIERTableAdapter();
+            autoPartsInventoryDataSetSUPPLIERTableAdapter.Fill(autoPartsInventoryDataSet.SUPPLIER);
+            System.Windows.Data.CollectionViewSource sUPPLIERViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("sUPPLIERViewSource")));
+            sUPPLIERViewSource.View.MoveCurrentToFirst();
+            // Load data into the table ORDER. You can modify this code as needed.
+            AddingTables.AutoPartsInventoryDataSetTableAdapters.ORDERTableAdapter autoPartsInventoryDataSetORDERTableAdapter = new AddingTables.AutoPartsInventoryDataSetTableAdapters.ORDERTableAdapter();
+            autoPartsInventoryDataSetORDERTableAdapter.Fill(autoPartsInventoryDataSet.ORDER);
+            System.Windows.Data.CollectionViewSource oRDERViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("oRDERViewSource")));
+            oRDERViewSource.View.MoveCurrentToFirst();
+        }
+
+        private void pRODUCTDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AddingTables.AutoPartsInventoryDataSet autoPartsInventoryDataSet = ((AddingTables.AutoPartsInventoryDataSet)(this.FindResource("autoPartsInventoryDataSet")));
+
+            productID.Text = autoPartsInventoryDataSet.PRODUCT[pRODUCTDataGrid.SelectedIndex].Product_ID.ToString();
+            productName.Text = autoPartsInventoryDataSet.PRODUCT[pRODUCTDataGrid.SelectedIndex].Product_Name.ToString();
+            productType.Text = autoPartsInventoryDataSet.PRODUCT[pRODUCTDataGrid.SelectedIndex].Product_Type.ToString();
+            qUantity.Text = autoPartsInventoryDataSet.PRODUCT[pRODUCTDataGrid.SelectedIndex].Quantity.ToString();
+            cOlor.Text = autoPartsInventoryDataSet.PRODUCT[pRODUCTDataGrid.SelectedIndex].Color.ToString();
+            buyingPrice.Text = autoPartsInventoryDataSet.PRODUCT[pRODUCTDataGrid.SelectedIndex].Buying_Price.ToString("##.00");
+            sellingPrice.Text = autoPartsInventoryDataSet.PRODUCT[pRODUCTDataGrid.SelectedIndex].Selling_Price.ToString("##.00");
+        }
+
+        private void sUPPLIERDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AddingTables.AutoPartsInventoryDataSet autoPartsInventoryDataSet = ((AddingTables.AutoPartsInventoryDataSet)(this.FindResource("autoPartsInventoryDataSet")));
+
+            supplierID.Text = autoPartsInventoryDataSet.SUPPLIER[sUPPLIERDataGrid.SelectedIndex].Supplier_ID.ToString();
+            supplierName.Text = autoPartsInventoryDataSet.SUPPLIER[sUPPLIERDataGrid.SelectedIndex].Supplier_Name.ToString();
+            dEscription.Text = autoPartsInventoryDataSet.SUPPLIER[sUPPLIERDataGrid.SelectedIndex].Supplier_Details.ToString();
+        }
+
+        private void oRDERDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AddingTables.AutoPartsInventoryDataSet autoPartsInventoryDataSet = ((AddingTables.AutoPartsInventoryDataSet)(this.FindResource("autoPartsInventoryDataSet")));
+
+            orderID.Text = autoPartsInventoryDataSet.ORDER[oRDERDataGrid.SelectedIndex].Order_ID.ToString();
+            producTID.Text = autoPartsInventoryDataSet.ORDER[oRDERDataGrid.SelectedIndex].Product_ID.ToString();
+            supplieRID.Text = autoPartsInventoryDataSet.ORDER[oRDERDataGrid.SelectedIndex].Supplier_ID.ToString();
+            dAte.Text = autoPartsInventoryDataSet.ORDER[oRDERDataGrid.SelectedIndex].Date.ToString("MMMM dd, yyyy");
+            qUAntity.Text = autoPartsInventoryDataSet.ORDER[oRDERDataGrid.SelectedIndex].Quantity_Ordered.ToString();
         }
     }
 }
