@@ -70,7 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="TableTitles.cs" />
+    <Compile Include="ORDER.cs" />
+    <Compile Include="PRODUCT.cs" />
+    <Compile Include="SUPPLIER.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
