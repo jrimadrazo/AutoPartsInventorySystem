@@ -1,0 +1,43 @@
+﻿<Window x:Name="AddOrderWindow1" x:Class="AddingTables.AddOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AddingTables"
+        mc:Ignorable="d"
+        Title="Add Order" Height="325" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderThickness="0,0,0,3" BorderBrush="DimGray" Margin="3">
+            <TextBlock Margin="3,3,3,0" Text="ORDER INFORMATION" HorizontalAlignment="Center" FontSize="20"/>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Margin="3" FontSize="15" HorizontalAlignment="Right" Text="Supplier ID:"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="3" FontSize="15" HorizontalAlignment="Right" Text="Product ID:"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Margin="3" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Date:"/>
+            <TextBlock Grid.Column="0" Grid.Row="3" Margin="3" FontSize="15" HorizontalAlignment="Right" Text="Quantity Ordered:"/>
+            <TextBox Grid.Column="1" Grid.Row="0" Margin="3" FontSize="15" x:Name="tbxSupplierID" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="3" FontSize="15" x:Name="tbxProductID" />
+            <DatePicker Grid.Column="1" Grid.Row="2" Margin="3" FontSize="15" x:Name="tbxDate" />
+            <TextBox Grid.Column="1" Grid.Row="3" Margin="3" FontSize="15" x:Name="tbxQuantityOrdered" />
+        </Grid>
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button x:Name="btnAddOrder" Margin="3" FontSize="15" Width="120" Height="25" Content="Add Order" Click="btnAddOrder_Click"/>
+            <Button x:Name="btnCancelAddOrder" Margin="3" FontSize="15" Width="120" Height="25" Content="Cancel" Click="btnCancelAddOrder_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

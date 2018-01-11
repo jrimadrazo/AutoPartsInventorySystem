@@ -32,10 +32,16 @@ namespace AddingTables
         public MainWindow()
         {
             InitializeComponent();
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\AutoPartsInventory.mdf;Integrated Security=True;Connect Timeout=30;");
-            SqlDataAdapter autoNode1 = new SqlDataAdapter("SELECT Product_Name FROM [PRODUCT]", con);
-            DataTable dt = new DataTable();
-            autoNode1.Fill(dt);
+            //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\AutoPartsInventory.mdf;Integrated Security=True;Connect Timeout=30;");
+            //con.Open();
+            ////SqlDataAdapter autoNode1 = new SqlDataAdapter();
+            //SqlCommand command1 = new SqlCommand();
+            //command1 = new SqlCommand("INSERT INTO [SUPPLIER] (Supplier_Name, Supplier_Details)" + "VALUES (@Supplier_Name, @Supplier_Details)", con);
+            //command1.Parameters.AddWithValue("@Supplier_Name", );
+            //command1.Parameters.AddWithValue("@Supplier_Details", );
+            //command1.ExecuteNonQuery();
+            //DataTable dt = new DataTable();
+            //autoNode1.Fill(dt);
 
             //for (int i = 0; i < dt.Rows.Count; i++)
             //{
@@ -110,6 +116,27 @@ namespace AddingTables
             supplieRID.Text = autoPartsInventoryDataSet.ORDER[oRDERDataGrid.SelectedIndex].Supplier_ID.ToString();
             dAte.Text = autoPartsInventoryDataSet.ORDER[oRDERDataGrid.SelectedIndex].Date.ToString("MMMM dd, yyyy");
             qUAntity.Text = autoPartsInventoryDataSet.ORDER[oRDERDataGrid.SelectedIndex].Quantity_Ordered.ToString();
+        }
+
+        private void btnAddSupplierWindow_Click(object sender, RoutedEventArgs e)
+        {
+            AddSupplierWindow win2 = new AddSupplierWindow();
+            win2.Show();
+            this.Close();
+        }
+
+        private void btnAddOrderWindow_Click(object sender, RoutedEventArgs e)
+        {
+            AddOrderWindow win3 = new AddOrderWindow();
+            win3.Show();
+            this.Close();
+        }
+
+        private void btnAddProductWindow_Click(object sender, RoutedEventArgs e)
+        {
+            AddingTables.Window1 win4 = new AddingTables.Window1();
+            win4.Show();
+            this.Close();
         }
     }
 }

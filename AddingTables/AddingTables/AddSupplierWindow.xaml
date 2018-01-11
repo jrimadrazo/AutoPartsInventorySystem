@@ -1,4 +1,4 @@
-﻿<Window x:Class="AddingTables.AddSupplierWindow"
+﻿<Window x:Name="AddSupplierWindow1" x:Class="AddingTables.AddSupplierWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -26,12 +26,12 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" Margin="3" FontSize="15" HorizontalAlignment="Right" Text="Supplier Name:"/>
             <TextBlock Grid.Column="0" Grid.Row="1" Margin="3" FontSize="15" HorizontalAlignment="Right" Text="Details:"/>
-            <TextBox Grid.Column="1" Grid.Row="0" Margin="3" FontSize="15" />
-            <TextBox Grid.Column="1" Grid.Row="1" Margin="3" FontSize="15" />
+            <TextBox Grid.Column="1" Grid.Row="0" Margin="3" FontSize="15" x:Name="tbxSupplierName"/>
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="3" FontSize="15" x:Name="tbxSupplierDetails"/>
         </Grid>
         <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Margin="3" FontSize="15" Width="120" Height="25" Content="Add Supplier"/>
-            <Button Margin="3" FontSize="15" Width="120" Height="25" Content="Cancel"/>
+            <Button x:Name="btnAddSuppler" Margin="3" FontSize="15" Width="120" Height="25" Content="Add Supplier" Click="btnAddSuppler_Click"/>
+            <Button x:Name="btnCancelAddSupplier" Margin="3" FontSize="15" Width="120" Height="25" Content="Cancel" Click="btnCancelAddSupplier_Click"/>
         </StackPanel>
     </Grid>
 </Window>
