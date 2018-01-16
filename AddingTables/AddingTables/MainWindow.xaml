@@ -139,7 +139,19 @@
                         <TextBlock Grid.Column="1" Grid.Row="4" Margin="3" x:Name="cOlor"/>
                         <TextBlock Grid.Column="1" Grid.Row="5" Margin="3" x:Name="buyingPrice"/>
                         <TextBlock Grid.Column="1" Grid.Row="6" Margin="3" x:Name="sellingPrice"/>
-                        <Button Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Margin="3" Content="Add Product" x:Name="btnAddProductWindow" VerticalAlignment="Bottom" Click="btnAddProductWindow_Click"/>
+                        <StackPanel Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Margin="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Margin="3" 
+                                    Content="Add Product"
+                                    Width="150"
+                                    x:Name="btnAddProductWindow" 
+                                    VerticalAlignment="Bottom" 
+                                    Click="btnAddProductWindow_Click"/>
+                            <Button Margin="3" 
+                                    Content="Edit Product Information" 
+                                    Width="200"
+                                    x:Name="btnEditProduct" 
+                                    VerticalAlignment="Bottom"/>
+                        </StackPanel>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -184,7 +196,19 @@
                         <TextBlock Grid.Column="1" Grid.Row="0" Margin="3" x:Name="supplierID"/>
                         <TextBlock Grid.Column="1" Grid.Row="1" Margin="3" x:Name="supplierName"/>
                         <TextBlock Grid.Column="1" Grid.Row="2" Margin="3" x:Name="dEscription"/>
-                        <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="3" Content="Add Supplier" x:Name="btnAddSupplierWindow" VerticalAlignment="Bottom" Click="btnAddSupplierWindow_Click"/>
+                        <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Content="Add Supplier" 
+                                    x:Name="btnAddSupplierWindow" 
+                                    VerticalAlignment="Bottom" 
+                                    Margin="3"
+                                    Width="150"
+                                    Click="btnAddSupplierWindow_Click"/>
+                            <Button Content="Edit Supplier Information"
+                                    VerticalAlignment="Bottom"
+                                    Margin="3"
+                                    Width="200"
+                                    x:Name="btnEditSupplier"/>
+                        </StackPanel>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -230,7 +254,19 @@
                         <TextBlock Grid.Column="1" Grid.Row="2" Margin="3" x:Name="supplieRID"/>
                         <TextBlock Grid.Column="1" Grid.Row="3" Margin="3" x:Name="dAte"/>
                         <TextBlock Grid.Column="1" Grid.Row="4" Margin="3" x:Name="qUAntity"/>
-                        <Button Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="3" Content="Add Order" x:Name="btnAddOrderWindow1" VerticalAlignment="Bottom" Click="btnAddOrderWindow_Click"/>
+                        <StackPanel Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="3" Orientation="Horizontal" HorizontalAlignment="Center"> 
+                            <Button Content="Add Order" 
+                                    Margin="3"
+                                    Width="150"
+                                    x:Name="btnAddOrderWindow1" 
+                                    VerticalAlignment="Bottom" 
+                                    Click="btnAddOrderWindow_Click"/>
+                            <Button Margin="3"
+                                    Content="Edit Order Information"
+                                    VerticalAlignment="Bottom"
+                                    Width="200"
+                                    x:Name="btnEditOrder"/>
+                        </StackPanel>
                     </Grid>
                 </Grid>
             </TabItem>
