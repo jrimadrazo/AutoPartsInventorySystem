@@ -7,7 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="MainWindow1"
     Title="Autoparts Inventory System"
+<<<<<<< HEAD
     Width="600"
+=======
+    Width="525"
+>>>>>>> 03bd7a5e5f1c638fdc60f41521ee6bfa5f374209
     Height="350"
     FontSize="15"
     Loaded="Window_Loaded"
@@ -158,7 +162,11 @@
                                 Width="200"
                                 Margin="3"
                                 VerticalAlignment="Bottom"
+<<<<<<< HEAD
                                 Content="Edit Product Information" Click="btnEditProduct_Click" />
+=======
+                                Content="Edit Product Information" />
+>>>>>>> 03bd7a5e5f1c638fdc60f41521ee6bfa5f374209
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -233,8 +241,12 @@
                             x:Name="dEscription"
                             Grid.Row="2"
                             Grid.Column="1"
+<<<<<<< HEAD
                             Margin="3"
                             TextWrapping="Wrap" />
+=======
+                            Margin="3" />
+>>>>>>> 03bd7a5e5f1c638fdc60f41521ee6bfa5f374209
                         <StackPanel
                             Grid.Row="3"
                             Grid.Column="0"
