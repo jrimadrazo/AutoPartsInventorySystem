@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Justin\Documents\GitHub\AutoPartsInventorySystem\AddingTables\AddingTables\obj\Debug\
+E:\AddingTables\AddingTables\obj\Debug\
 AddingTables
 none
 false
 DEBUG;TRACE
-C:\Users\Justin\Documents\GitHub\AutoPartsInventorySystem\AddingTables\AddingTables\App.xaml
-3-938438882
+E:\AddingTables\AddingTables\App.xaml
+41028930971
 2294187914
-15-1634826321
+16-1071680477
 13738642453
-AddSupplierWindow.xaml;MainWindow.xaml;Window1.xaml;
+AddOrderWindow.xaml;AddSupplierWindow.xaml;MainWindow.xaml;Window1.xaml;
 
 True
 
