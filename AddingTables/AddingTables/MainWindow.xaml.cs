@@ -138,5 +138,12 @@ namespace AddingTables
             win4.Show();
             this.Close();
         }
+
+        private void btnEditProduct_Click(object sender, RoutedEventArgs e)
+        {
+            EditProduct win4 = new EditProduct();
+            win4.Show();
+            this.Close();
+        }
     }
 }

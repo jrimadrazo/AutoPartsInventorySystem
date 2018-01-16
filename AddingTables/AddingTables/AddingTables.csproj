@@ -76,6 +76,15 @@
     <Compile Include="AddSupplierWindow.xaml.cs">
       <DependentUpon>AddSupplierWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditOrder.xaml.cs">
+      <DependentUpon>EditOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.xaml.cs">
+      <DependentUpon>EditProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditSupplier.xaml.cs">
+      <DependentUpon>EditSupplier.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ORDER.cs" />
     <Compile Include="PRODUCT.cs" />
     <Compile Include="SUPPLIER.cs" />
@@ -87,6 +96,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddSupplierWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditSupplier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

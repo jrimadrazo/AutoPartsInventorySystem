@@ -1,15 +1,14 @@
-﻿<Window
-    x:Class="AddingTables.Window1"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:AddingTables"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    x:Name="AddProductWindow"
-    Title="Add Product"
-    Width="500"
-    Height="325"
-    mc:Ignorable="d">
+﻿<Window x:Class="AddingTables.EditProduct"
+        x:Name="EditProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AddingTables"
+        mc:Ignorable="d"
+        Title="Edit Product Information" 
+        Width="500"
+        Height="325" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -83,37 +82,37 @@
                 FontSize="15"
                 Text="Selling Price:" />
             <TextBox
-                x:Name="tbxProductName"
+                x:Name="tbxEditProductName"
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="3"
                 FontSize="15" />
             <TextBox
-                x:Name="tbxProductType"
+                x:Name="tbxEditProductType"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="3"
                 FontSize="15" />
             <TextBox
-                x:Name="tbxQuantity"
+                x:Name="tbxEditQuantity"
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="3"
                 FontSize="15" />
             <TextBox
-                x:Name="tbxColor"
+                x:Name="tbxEditColor"
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="3"
                 FontSize="15" />
             <TextBox
-                x:Name="tbxBuyPrice"
+                x:Name="tbxEditBuyPrice"
                 Grid.Row="4"
                 Grid.Column="1"
                 Margin="3"
                 FontSize="15" />
             <TextBox
-                x:Name="tbxSellPrice"
+                x:Name="tbxEditSellPrice"
                 Grid.Row="5"
                 Grid.Column="1"
                 Margin="3"
@@ -125,21 +124,19 @@
             VerticalAlignment="Bottom"
             Orientation="Horizontal">
             <Button
-                x:Name="btnAddProduct"
+                x:Name="btnEditProduct"
                 Width="120"
                 Height="25"
                 Margin="3"
-                Click="btnAddProduct_Click"
-                Content="Add Product"
-                FontSize="15" />
+                Content="Edit"
+                FontSize="15" Click="btnEditProduct_Click" />
             <Button
-                x:Name="btnCancelAddProduct"
+                x:Name="btnCancelEditProduct"
                 Width="120"
                 Height="25"
                 Margin="3"
-                Click="btnCancelAddProduct_Click"
                 Content="Cancel"
-                FontSize="15" />
+                FontSize="15" Click="btnCancelEditProduct_Click" />
         </StackPanel>
     </Grid>
 </Window>

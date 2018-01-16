@@ -31,7 +31,13 @@ namespace AddingTables
             var pname = tbxProductName.Text;
             var ptype = tbxProductType.Text;
             var pquantity = tbxQuantity.Text;
-            var pcolor = tbxColor.Text;
+
+            string pcolor;
+            if (tbxColor.Text == "")
+                pcolor = "N/A";
+            else
+                pcolor = tbxColor.Text;
+
             var pbuyp = tbxBuyPrice.Text;
             var psellp = tbxSellPrice.Text;
 

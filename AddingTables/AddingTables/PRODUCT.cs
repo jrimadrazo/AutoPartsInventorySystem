@@ -68,4 +68,11 @@ namespace AddingTables
             return ProductSell * ProductQuantity;
         }
     }
+
+    public enum ProductType
+    {
+        Interior,
+        Exterior,
+        Engine
+    }
 }
