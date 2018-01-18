@@ -76,18 +76,20 @@
     <Compile Include="AddSupplierWindow.xaml.cs">
       <DependentUpon>AddSupplierWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditOrder.xaml.cs">
-      <DependentUpon>EditOrder.xaml</DependentUpon>
+    <Compile Include="EditOrderWindow.xaml.cs">
+      <DependentUpon>EditOrderWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditProduct.xaml.cs">
-      <DependentUpon>EditProduct.xaml</DependentUpon>
+    <Compile Include="EditProductWindow.xaml.cs">
+      <DependentUpon>EditProductWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditSupplier.xaml.cs">
-      <DependentUpon>EditSupplier.xaml</DependentUpon>
+    <Compile Include="EditSupplierWindow.xaml.cs">
+      <DependentUpon>EditSupplierWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainViewModel.cs" />
     <Compile Include="ORDER.cs" />
     <Compile Include="PRODUCT.cs" />
     <Compile Include="SUPPLIER.cs" />
+    <Compile Include="ViewModelLocator.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -99,15 +101,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditOrder.xaml">
+    <Page Include="EditOrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditProduct.xaml">
+    <Page Include="EditProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditSupplier.xaml">
+    <Page Include="EditSupplierWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

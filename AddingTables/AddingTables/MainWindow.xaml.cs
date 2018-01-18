@@ -120,29 +120,45 @@ namespace AddingTables
 
         private void btnAddSupplierWindow_Click(object sender, RoutedEventArgs e)
         {
-            AddSupplierWindow win2 = new AddSupplierWindow();
+            var win2 = new AddSupplierWindow();
             win2.Show();
             this.Close();
         }
 
         private void btnAddOrderWindow_Click(object sender, RoutedEventArgs e)
         {
-            AddOrderWindow win3 = new AddOrderWindow();
+            var win3 = new AddOrderWindow();
             win3.Show();
             this.Close();
         }
 
         private void btnAddProductWindow_Click(object sender, RoutedEventArgs e)
         {
-            AddingTables.Window1 win4 = new AddingTables.Window1();
+            var win4 = new AddingTables.Window1();
             win4.Show();
+            this.Close();
+        }
+
+        private void btnEditSupplier_Click(object sender, RoutedEventArgs e)
+        {
+            //ViewModelLocator.MainViewModel.SelectedSupplier = new SUPPLIER ();
+
+            var win5 = new EditSupplierWindow();
+            win5.Show();
+            this.Close();
+        }
+
+        private void btnEditOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var win6 = new EditOrderWindow();
+            win6.Show();
             this.Close();
         }
 
         private void btnEditProduct_Click(object sender, RoutedEventArgs e)
         {
-            EditProduct win4 = new EditProduct();
-            win4.Show();
+            var win7 = new EditProductWindow();
+            win7.Show();
             this.Close();
         }
     }

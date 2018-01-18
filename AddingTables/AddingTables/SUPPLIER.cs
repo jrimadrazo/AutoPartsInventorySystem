@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddingTables
 {
-    class SUPPLIER
+    public class SUPPLIER
     {
         private int supplierID;
         private string supplierName;
