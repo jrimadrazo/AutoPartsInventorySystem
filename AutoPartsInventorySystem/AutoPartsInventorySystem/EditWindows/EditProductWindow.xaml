@@ -87,37 +87,43 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=ProductName}" />
             <TextBox
                 x:Name="tbxEditProductType"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=ProductType}" />
             <TextBox
                 x:Name="tbxEditQuantity"
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=ProductQuantity}" />
             <TextBox
                 x:Name="tbxEditColor"
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=ProductColor}" />
             <TextBox
                 x:Name="tbxEditBuyingPrice"
                 Grid.Row="4"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=ProductBuyingPrice}" />
             <TextBox
                 x:Name="tbxEditSellingPrice"
                 Grid.Row="5"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=ProductSellingPrice}" />
         </Grid>
         <StackPanel
             Grid.Row="2"
@@ -129,15 +135,17 @@
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnEditProduct_Click"
                 Content="Edit Product"
-                FontSize="15" Click="btnEditProduct_Click" />
+                FontSize="15" />
             <Button
                 x:Name="btnCancelEditProduct"
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnCancelEditProduct_Click"
                 Content="Cancel"
-                FontSize="15" Click="btnCancelEditProduct_Click" />
+                FontSize="15" />
         </StackPanel>
     </Grid>
 </Window>

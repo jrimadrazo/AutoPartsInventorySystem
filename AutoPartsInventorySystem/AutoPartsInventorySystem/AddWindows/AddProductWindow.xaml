@@ -129,15 +129,17 @@
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnAddProduct_Click"
                 Content="Add Product"
-                FontSize="15" Click="btnAddProduct_Click" />
+                FontSize="15" />
             <Button
                 x:Name="btnCancelAddProduct"
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnCancelAddProduct_Click"
                 Content="Cancel"
-                FontSize="15" Click="btnCancelAddProduct_Click" />
+                FontSize="15" />
         </StackPanel>
     </Grid>
 </Window>

@@ -22,10 +22,22 @@ namespace AutoPartsInventorySystem
         public EditProductWindow()
         {
             InitializeComponent();
+            this.DataContext = ViewModelLocator.ProductViewModel.SelectedProduct;
         }
 
         private void btnEditProduct_Click(object sender, RoutedEventArgs e)
         {
+            var pid = ViewModelLocator.ProductViewModel.SelectedProduct.ProductID;
+            var pname = tbxEditProductName.Text;
+            var ptype = tbxEditProductType.Text;
+            int pquantity = Convert.ToInt16(tbxEditQuantity.Text);
+            var pcolor = tbxEditColor.Text;
+            int pbuyp = Convert.ToInt16(tbxEditBuyingPrice.Text);
+            int psellp = Convert.ToInt16(tbxEditSellingPrice.Text);
+
+            ViewModelLocator.ProductViewModel.EditProduct(pid, pname, ptype, pquantity, pcolor, pbuyp, psellp);
+            ViewModelLocator.ProductViewModel.CreateProductList();
+
             var mainwindow = new MainWindow();
             mainwindow.Show();
             this.Close();

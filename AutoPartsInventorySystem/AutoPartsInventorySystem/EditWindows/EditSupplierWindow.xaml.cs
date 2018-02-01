@@ -22,10 +22,18 @@ namespace AutoPartsInventorySystem
         public EditSupplierWindow()
         {
             InitializeComponent();
+            this.DataContext = ViewModelLocator.SupplierViewModel.SelectedSupplier;
         }
 
         private void btnEditSupplier_Click(object sender, RoutedEventArgs e)
         {
+            var sid = ViewModelLocator.SupplierViewModel.SelectedSupplier.SupplierID;
+            var sname = tbxEditSupplierName.Text;
+            var sdetails = tbxEditSupplierDetails.Text;
+
+            ViewModelLocator.SupplierViewModel.EditSupplier(sid, sname, sdetails);
+            ViewModelLocator.SupplierViewModel.CreateSupplierList();
+
             var mainwindow = new MainWindow();
             mainwindow.Show();
             this.Close();

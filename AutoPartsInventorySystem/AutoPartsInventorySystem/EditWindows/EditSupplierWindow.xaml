@@ -55,13 +55,15 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=SupplierName}" />
             <TextBox
                 x:Name="tbxEditSupplierDetails"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=SupplierDetails}" />
         </Grid>
         <StackPanel
             Grid.Row="2"
@@ -73,15 +75,17 @@
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnEditSupplier_Click"
                 Content="Edit Supplier"
-                FontSize="15" Click="btnEditSupplier_Click" />
+                FontSize="15" />
             <Button
                 x:Name="btnCancelEditSupplier"
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnCancelEditSupplier_Click"
                 Content="Cancel"
-                FontSize="15" Click="btnCancelEditSupplier_Click" />
+                FontSize="15" />
         </StackPanel>
     </Grid>
 </Window>

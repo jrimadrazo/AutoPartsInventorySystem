@@ -87,6 +87,7 @@
     <Compile Include="EditWindows\EditSupplierWindow.xaml.cs">
       <DependentUpon>EditSupplierWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Methods.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />

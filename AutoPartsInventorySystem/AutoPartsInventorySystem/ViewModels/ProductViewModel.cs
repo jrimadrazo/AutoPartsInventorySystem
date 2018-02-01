@@ -24,11 +24,10 @@ namespace AutoPartsInventorySystem
         {
             ProductList.Clear();
 
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\AutoPartsInventory.mdf;Integrated Security=True;Connect Timeout=30;");
-            con.Open();
-            SqlDataAdapter autoNode1 = new SqlDataAdapter("SELECT * From [PRODUCT]", con);
+            SqlConnection con = Methods.AccessDatabase();
+            SqlDataAdapter autoNode = new SqlDataAdapter("SELECT * From [PRODUCT]", con);
             DataTable dt = new DataTable();
-            autoNode1.Fill(dt);
+            autoNode.Fill(dt);
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -48,17 +47,41 @@ namespace AutoPartsInventorySystem
 
         public void AddProduct(string pname, string ptype, int pquantity, string pcolor, int pbuyp, int psellp)
         {
-            SqlConnection con2 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\AutoPartsInventory.mdf;Integrated Security=True;Connect Timeout=30;");
-            con2.Open();
-            SqlCommand command3 = new SqlCommand();
-            command3 = new SqlCommand("INSERT INTO [PRODUCT] (Product_Name, Product_Type, Quantity, Color, Buying_Price, Selling_Price)" + "VALUES (@Product_Name, @Product_Type, @Quantity, @Color, @Buying_Price, @Selling_Price)", con2);
-            command3.Parameters.AddWithValue("@Product_Name", pname);
-            command3.Parameters.AddWithValue("@Product_Type", ptype);
-            command3.Parameters.AddWithValue("@Quantity", pquantity);
-            command3.Parameters.AddWithValue("@Color", pcolor);
-            command3.Parameters.AddWithValue("@Buying_Price", pbuyp);
-            command3.Parameters.AddWithValue("@Selling_Price", psellp);
-            command3.ExecuteNonQuery();
+            SqlConnection con = Methods.AccessDatabase();
+            SqlCommand command = new SqlCommand("INSERT INTO [PRODUCT] (Product_Name, Product_Type, Quantity, Color, Buying_Price, Selling_Price)" + "VALUES (@Product_Name, @Product_Type, @Quantity, @Color, @Buying_Price, @Selling_Price)", con);
+            command.Parameters.AddWithValue("@Product_Name", pname);
+            command.Parameters.AddWithValue("@Product_Type", ptype);
+            command.Parameters.AddWithValue("@Quantity", pquantity);
+            command.Parameters.AddWithValue("@Color", pcolor);
+            command.Parameters.AddWithValue("@Buying_Price", pbuyp);
+            command.Parameters.AddWithValue("@Selling_Price", psellp);
+            command.ExecuteNonQuery();
+        }
+
+        public void EditProduct(int pid, string pname, string ptype, int pquantity, string pcolor, int pbuyp, int psellp)
+        {
+            if (SelectedProduct != null)
+            {
+                SqlConnection con = Methods.AccessDatabase();
+                SqlCommand command = new SqlCommand("UPDATE [PRODUCT] SET Product_Name = @Product_Name, Product_Type = @Product_Type, Quantity = @Quantity, Color = @Color, Buying_Price = @Buying_Price, Selling_Price = @Selling_Price WHERE Product_ID = " + pid, con);
+                command.Parameters.AddWithValue("@Product_Name", pname);
+                command.Parameters.AddWithValue("@Product_Type", ptype);
+                command.Parameters.AddWithValue("@Quantity", pquantity);
+                command.Parameters.AddWithValue("@Color", pcolor);
+                command.Parameters.AddWithValue("@Buying_Price", pbuyp);
+                command.Parameters.AddWithValue("@Selling_Price", psellp);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteProduct(int pid)
+        {
+            if (SelectedProduct != null)
+            {
+                SqlConnection con = Methods.AccessDatabase();
+                SqlCommand command = new SqlCommand("DELETE FROM [PRODUCT] WHERE Product_ID = " + pid, con);
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

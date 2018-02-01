@@ -16,7 +16,7 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=".5*" />
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <!--<ListView
@@ -30,17 +30,27 @@
                             </GridView>
                         </ListView.View>
                     </ListView>-->
-                    <ListBox x:Name="lbProductData" Grid.Column="0" Margin="3"
-                             ItemsSource="{Binding Path=ProductList}"
-                             SelectedItem="{Binding Path=SelectedProduct}">
+                    <ListBox
+                        x:Name="lbProductData"
+                        Grid.Column="0"
+                        Margin="3"
+                        ItemsSource="{Binding Path=ProductList}"
+                        SelectedItem="{Binding Path=SelectedProduct}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=ProductName}"/>
+                                <TextBlock Text="{Binding Path=ProductName}" />
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <GridSplitter Grid.Column="1" Width="2" Margin="0,3" HorizontalAlignment="Stretch"/>
-                    <Grid Grid.Column="2" x:Name="gdProductInfo" DataContext="{Binding Path=SelectedProduct}">
+                    <GridSplitter
+                        Grid.Column="1"
+                        Width="2"
+                        Margin="0,3"
+                        HorizontalAlignment="Stretch" />
+                    <Grid
+                        x:Name="gdProductInfo"
+                        Grid.Column="2"
+                        DataContext="{Binding Path=SelectedProduct}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition />
@@ -99,39 +109,46 @@
                             Text="Selling Price: " />
                         <TextBlock
                             x:Name="blkProductID"
-                            Grid.Row="0" Text="{Binding Path=ProductID}"
+                            Grid.Row="0"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=ProductID}" />
                         <TextBlock
                             x:Name="blkProductName"
-                            Grid.Row="1" Text="{Binding Path=ProductName}"
+                            Grid.Row="1"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=ProductName}" />
                         <TextBlock
                             x:Name="blkProductType"
-                            Grid.Row="2" Text="{Binding Path=ProductType}"
+                            Grid.Row="2"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=ProductType}" />
                         <TextBlock
                             x:Name="blkQuantity"
-                            Grid.Row="3" Text="{Binding Path=ProductQuantity}"
+                            Grid.Row="3"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=ProductQuantity}" />
                         <TextBlock
                             x:Name="blkColor"
-                            Grid.Row="4" Text="{Binding Path=ProductColor}"
+                            Grid.Row="4"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=ProductColor}" />
                         <TextBlock
                             x:Name="blkBuyingPrice"
-                            Grid.Row="5" Text="{Binding Path=ProductBuyingPrice}"
+                            Grid.Row="5"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=ProductBuyingPrice}" />
                         <TextBlock
                             x:Name="blkSellingPrice"
-                            Grid.Row="6" Text="{Binding Path=ProductSellingPrice}"
+                            Grid.Row="6"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=ProductSellingPrice}" />
                         <StackPanel
                             Grid.Row="7"
                             Grid.Column="0"
@@ -144,7 +161,8 @@
                                 x:Name="btnAddProductWindow"
                                 Margin="3"
                                 Background="Transparent"
-                                BorderThickness="0" Click="btnAddProductWindow_Click">
+                                BorderThickness="0"
+                                Click="btnAddProductWindow_Click">
                                 <Button.Content>
                                     <Path
                                         Height="20"
@@ -153,12 +171,23 @@
                                         Stretch="Uniform"
                                         UseLayoutRounding="False" />
                                 </Button.Content>
+                                <!--<Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="Coral"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>-->
                             </Button>
                             <Button
                                 x:Name="btnEditProductWindow"
                                 Margin="3"
                                 Background="Transparent"
-                                BorderThickness="0" Click="btnEditProductWindow_Click">
+                                BorderThickness="0"
+                                Click="btnEditProductWindow_Click">
                                 <Button.Content>
                                     <Path
                                         Width="20"
@@ -169,6 +198,20 @@
                                         UseLayoutRounding="False" />
                                 </Button.Content>
                             </Button>
+                            <Button
+                                x:Name="btnDeleteProductWindow"
+                                Margin="3"
+                                Background="Transparent"
+                                BorderThickness="0" Click="btnDeleteProductWindow_Click">
+                                <Button.Content>
+                                    <Path
+                                    Height="20"
+                                    Data="F1 M 69,6.00098C 70.6582,6.00098 72,7.34473 72,9.00098C 72,10.6572 70.6582,12.001 69,12.001L 3,12.001C 1.34277,12.001 0,10.6572 0,9.00098C 0,7.34473 1.34277,6.00098 3,6.00098L 18,6.00098L 18,3.00098C 18,1.34473 19.3428,0.000976563 21,0.000976563L 51,0.000976563C 52.6582,0.000976563 54,1.34473 54,3.00098L 54,6.00098L 69,6.00098 Z M 48.8564,72.001L 53.999,66.8564L 41.1426,54.001L 53.999,41.1455L 48.8564,36.001L 36,48.8584L 23.1426,36.001L 17.999,41.1465L 30.8564,54.001L 18,66.8574L 23.1426,72.001L 35.999,59.1436L 48.8564,72.001 Z M 5.99902,90.001L 5.99902,18.001L 65.999,18.001L 65.999,90.001L 5.99902,90.001 Z "
+                                    Fill="Black"
+                                    Stretch="Uniform"
+                                    UseLayoutRounding="False" />
+                                </Button.Content>
+                            </Button>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -177,7 +220,7 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=".5*" />
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <!--<ListView
@@ -191,16 +234,23 @@
                             </GridView>
                         </ListView.View>
                     </ListView>-->
-                    <ListBox x:Name="lbSupplierData" Grid.Column="0" Margin="3"
-                             ItemsSource="{Binding Path=SupplierList}"
-                             SelectedItem="{Binding Path=SelectedSupplier}">
+                    <ListBox
+                        x:Name="lbSupplierData"
+                        Grid.Column="0"
+                        Margin="3"
+                        ItemsSource="{Binding Path=SupplierList}"
+                        SelectedItem="{Binding Path=SelectedSupplier}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=SupplierName}"/>
+                                <TextBlock Text="{Binding Path=SupplierName}" />
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <GridSplitter Grid.Column="1" Width="2" Margin="0,3" HorizontalAlignment="Stretch"/>
+                    <GridSplitter
+                        Grid.Column="1"
+                        Width="2"
+                        Margin="0,3"
+                        HorizontalAlignment="Stretch" />
                     <Grid Grid.Column="2" DataContext="{Binding Path=SelectedSupplier}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
@@ -232,19 +282,22 @@
                             Text="Details: " />
                         <TextBlock
                             x:Name="blkSupplierID"
-                            Grid.Row="0" Text="{Binding Path=SupplierID}"
-                            Grid.Column="1"
-                            Margin="3" />
-                        <TextBlock
-                            x:Name="blkSupplierName"
-                            Grid.Row="1" Text="{Binding Path=SupplierName}"
-                            Grid.Column="1"
-                            Margin="3" />
-                        <TextBlock
-                            x:Name="blkSupplierDetails"
-                            Grid.Row="2" Text="{Binding Path=SupplierDetails}"
+                            Grid.Row="0"
                             Grid.Column="1"
                             Margin="3"
+                            Text="{Binding Path=SupplierID}" />
+                        <TextBlock
+                            x:Name="blkSupplierName"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="3"
+                            Text="{Binding Path=SupplierName}" />
+                        <TextBlock
+                            x:Name="blkSupplierDetails"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="3"
+                            Text="{Binding Path=SupplierDetails}"
                             TextWrapping="Wrap" />
                         <StackPanel
                             Grid.Row="3"
@@ -258,7 +311,8 @@
                                 x:Name="btnAddSupplierWindow"
                                 Margin="3"
                                 Background="Transparent"
-                                BorderThickness="0" Click="btnAddSupplierWindow_Click">
+                                BorderThickness="0"
+                                Click="btnAddSupplierWindow_Click">
                                 <Button.Content>
                                     <Path
                                         Height="20"
@@ -272,7 +326,8 @@
                                 x:Name="btnEditSupplierWindow"
                                 Margin="3"
                                 Background="Transparent"
-                                BorderThickness="0" Click="btnEditSupplierWindow_Click">
+                                BorderThickness="0"
+                                Click="btnEditSupplierWindow_Click">
                                 <Button.Content>
                                     <Path
                                         Width="20"
@@ -283,6 +338,20 @@
                                         UseLayoutRounding="False" />
                                 </Button.Content>
                             </Button>
+                            <Button
+                                x:Name="btnDeleteSupplierWindow"
+                                Margin="3"
+                                Background="Transparent"
+                                BorderThickness="0" Click="btnDeleteSupplierWindow_Click">
+                                <Button.Content>
+                                    <Path
+                                    Height="20"
+                                    Data="F1 M 69,6.00098C 70.6582,6.00098 72,7.34473 72,9.00098C 72,10.6572 70.6582,12.001 69,12.001L 3,12.001C 1.34277,12.001 0,10.6572 0,9.00098C 0,7.34473 1.34277,6.00098 3,6.00098L 18,6.00098L 18,3.00098C 18,1.34473 19.3428,0.000976563 21,0.000976563L 51,0.000976563C 52.6582,0.000976563 54,1.34473 54,3.00098L 54,6.00098L 69,6.00098 Z M 48.8564,72.001L 53.999,66.8564L 41.1426,54.001L 53.999,41.1455L 48.8564,36.001L 36,48.8584L 23.1426,36.001L 17.999,41.1465L 30.8564,54.001L 18,66.8574L 23.1426,72.001L 35.999,59.1436L 48.8564,72.001 Z M 5.99902,90.001L 5.99902,18.001L 65.999,18.001L 65.999,90.001L 5.99902,90.001 Z "
+                                    Fill="Black"
+                                    Stretch="Uniform"
+                                    UseLayoutRounding="False" />
+                                </Button.Content>
+                            </Button>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -291,7 +360,7 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=".5*" />
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <!--<ListView
@@ -305,16 +374,23 @@
                             </GridView>
                         </ListView.View>
                     </ListView>-->
-                    <ListBox x:Name="lbOrderData" Grid.Column="0" Margin="3"
-                             ItemsSource="{Binding Path=OrderList}"
-                             SelectedItem="{Binding Path=SelectedOrder}">
+                    <ListBox
+                        x:Name="lbOrderData"
+                        Grid.Column="0"
+                        Margin="3"
+                        ItemsSource="{Binding Path=OrderList}"
+                        SelectedItem="{Binding Path=SelectedOrder}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=DateOrdered, StringFormat={}{0:dd MMM yyyy}}"/>
+                                <TextBlock Text="{Binding Path=DateOrdered, StringFormat={}{0:dd MMM yyyy}}" />
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <GridSplitter Grid.Column="1" Width="2" Margin="0,3" HorizontalAlignment="Stretch"/>
+                    <GridSplitter
+                        Grid.Column="1"
+                        Width="2"
+                        Margin="0,3"
+                        HorizontalAlignment="Stretch" />
                     <Grid Grid.Column="2" DataContext="{Binding Path=SelectedOrder}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
@@ -360,29 +436,34 @@
                             Text="Quantity: " />
                         <TextBlock
                             x:Name="blkOrderID"
-                            Grid.Row="0" Text="{Binding Path=OrderID}"
+                            Grid.Row="0"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=OrderID}" />
                         <TextBlock
                             x:Name="blkOProductID"
-                            Grid.Row="1" Text="{Binding Path=ProductID}"
+                            Grid.Row="1"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=ProductID}" />
                         <TextBlock
                             x:Name="blkOSupplierID"
-                            Grid.Row="2" Text="{Binding Path=SupplierID}"
+                            Grid.Row="2"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=SupplierID}" />
                         <TextBlock
                             x:Name="blkOrderDat"
-                            Grid.Row="3" Text="{Binding Path=DateOrdered, StringFormat={}{0:dd MMM yyyy}}"
+                            Grid.Row="3"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=DateOrdered, StringFormat={}{0:dd MMM yyyy}}" />
                         <TextBlock
                             x:Name="blkOrderQuantity"
-                            Grid.Row="4" Text="{Binding Path=QuantityOrdered}"
+                            Grid.Row="4"
                             Grid.Column="1"
-                            Margin="3" />
+                            Margin="3"
+                            Text="{Binding Path=QuantityOrdered}" />
                         <StackPanel
                             Grid.Row="5"
                             Grid.Column="0"
@@ -395,7 +476,8 @@
                                 x:Name="btnAddOrderWindow"
                                 Margin="3"
                                 Background="Transparent"
-                                BorderThickness="0" Click="btnAddOrderWindow_Click">
+                                BorderThickness="0"
+                                Click="btnAddOrderWindow_Click">
                                 <Button.Content>
                                     <Path
                                         Height="20"
@@ -409,7 +491,8 @@
                                 x:Name="btnEditOrderWindow"
                                 Margin="3"
                                 Background="Transparent"
-                                BorderThickness="0" Click="btnEditOrderWindow_Click">
+                                BorderThickness="0"
+                                Click="btnEditOrderWindow_Click">
                                 <Button.Content>
                                     <Path
                                         Width="20"
@@ -418,6 +501,20 @@
                                         Fill="Black"
                                         Stretch="Uniform"
                                         UseLayoutRounding="False" />
+                                </Button.Content>
+                            </Button>
+                            <Button
+                                x:Name="btnDeleteOrderWindow"
+                                Margin="3"
+                                Background="Transparent"
+                                BorderThickness="0" Click="btnDeleteOrderWindow_Click">
+                                <Button.Content>
+                                    <Path
+                                    Height="20"
+                                    Data="F1 M 69,6.00098C 70.6582,6.00098 72,7.34473 72,9.00098C 72,10.6572 70.6582,12.001 69,12.001L 3,12.001C 1.34277,12.001 0,10.6572 0,9.00098C 0,7.34473 1.34277,6.00098 3,6.00098L 18,6.00098L 18,3.00098C 18,1.34473 19.3428,0.000976563 21,0.000976563L 51,0.000976563C 52.6582,0.000976563 54,1.34473 54,3.00098L 54,6.00098L 69,6.00098 Z M 48.8564,72.001L 53.999,66.8564L 41.1426,54.001L 53.999,41.1455L 48.8564,36.001L 36,48.8584L 23.1426,36.001L 17.999,41.1465L 30.8564,54.001L 18,66.8574L 23.1426,72.001L 35.999,59.1436L 48.8564,72.001 Z M 5.99902,90.001L 5.99902,18.001L 65.999,18.001L 65.999,90.001L 5.99902,90.001 Z "
+                                    Fill="Black"
+                                    Stretch="Uniform"
+                                    UseLayoutRounding="False" />
                                 </Button.Content>
                             </Button>
                         </StackPanel>

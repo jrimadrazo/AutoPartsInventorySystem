@@ -24,11 +24,10 @@ namespace AutoPartsInventorySystem
         {
             SupplierList.Clear();
 
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\AutoPartsInventory.mdf;Integrated Security=True;Connect Timeout=30;");
-            con.Open();
-            SqlDataAdapter autoNode1 = new SqlDataAdapter("SELECT * From [SUPPLIER]", con);
+            SqlConnection con = Methods.AccessDatabase();
+            SqlDataAdapter autoNode = new SqlDataAdapter("SELECT * From [SUPPLIER]", con);
             DataTable dt = new DataTable();
-            autoNode1.Fill(dt);
+            autoNode.Fill(dt);
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -44,13 +43,33 @@ namespace AutoPartsInventorySystem
 
         public void AddSupplier(string sname, string sdetails)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\AutoPartsInventory.mdf;Integrated Security=True;Connect Timeout=30;");
-            con.Open();
-            SqlCommand command1 = new SqlCommand();
-            command1 = new SqlCommand("INSERT INTO [SUPPLIER] (Supplier_Name, Supplier_Details)" + "VALUES (@Supplier_Name, @Supplier_Details)", con);
-            command1.Parameters.AddWithValue("@Supplier_Name", sname);
-            command1.Parameters.AddWithValue("@Supplier_Details", sdetails);
-            command1.ExecuteNonQuery();
+            SqlConnection con = Methods.AccessDatabase();
+            SqlCommand command = new SqlCommand("INSERT INTO [SUPPLIER] (Supplier_Name, Supplier_Details)" + "VALUES (@Supplier_Name, @Supplier_Details)", con);
+            command.Parameters.AddWithValue("@Supplier_Name", sname);
+            command.Parameters.AddWithValue("@Supplier_Details", sdetails);
+            command.ExecuteNonQuery();
+        }
+
+        public void EditSupplier(int sid, string sname, string sdetails)
+        {
+            if (SelectedSupplier != null)
+            {
+                SqlConnection con = Methods.AccessDatabase();
+                SqlCommand command = new SqlCommand("UPDATE [SUPPLIER] SET Supplier_Name = @Supplier_Name, Supplier_Details = @Supplier_Details WHERE Supplier_ID = " + sid, con);
+                command.Parameters.AddWithValue("@Supplier_Name", sname);
+                command.Parameters.AddWithValue("@Supplier_Details", sdetails);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteSupplier(int sid)
+        {
+            if (SelectedSupplier != null)
+            {
+                SqlConnection con = Methods.AccessDatabase();
+                SqlCommand command = new SqlCommand("DELETE FROM [SUPPLIER] WHERE Supplier_ID = " + sid, con);
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

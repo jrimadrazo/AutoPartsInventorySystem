@@ -101,15 +101,17 @@
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnAddOrder_Click"
                 Content="Add Order"
-                FontSize="15" Click="btnAddOrder_Click" />
+                FontSize="15" />
             <Button
                 x:Name="btnCancelAddOrder"
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnCancelAddOrder_Click"
                 Content="Cancel"
-                FontSize="15" Click="btnCancelAddOrder_Click" />
+                FontSize="15" />
         </StackPanel>
     </Grid>
 </Window>

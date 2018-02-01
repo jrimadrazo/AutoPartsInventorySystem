@@ -24,11 +24,10 @@ namespace AutoPartsInventorySystem
         {
             OrderList.Clear();
 
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\AutoPartsInventory.mdf;Integrated Security=True;Connect Timeout=30;");
-            con.Open();
-            SqlDataAdapter autoNode1 = new SqlDataAdapter("SELECT * From [ORDER]", con);
+            SqlConnection con = Methods.AccessDatabase();
+            SqlDataAdapter autoNode = new SqlDataAdapter("SELECT * From [ORDER]", con);
             DataTable dt = new DataTable();
-            autoNode1.Fill(dt);
+            autoNode.Fill(dt);
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -46,15 +45,37 @@ namespace AutoPartsInventorySystem
 
         public void AddOrder(int osupplierid, int oproductid, DateTime odate, int oquantity)
         {
-            SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\jrimadrazo\Documents\Visual Studio 2015\Projects\AddingTables\AddingTables\AutoPartsInventory.mdf;Integrated Security=True;Connect Timeout=30;");
-            con1.Open();
-            SqlCommand command2 = new SqlCommand();
-            command2 = new SqlCommand("INSERT INTO [ORDER] (Supplier_ID, Product_ID, Date, Quantity_Ordered)" + "VALUES (@Supplier_ID, @Product_ID, @Date, @Quantity_Ordered)", con1);
-            command2.Parameters.AddWithValue("@Supplier_ID", osupplierid);
-            command2.Parameters.AddWithValue("@Product_ID", oproductid);
-            command2.Parameters.AddWithValue("@Date", odate);
-            command2.Parameters.AddWithValue("@Quantity_Ordered", oquantity);
-            command2.ExecuteNonQuery();
+            SqlConnection con = Methods.AccessDatabase();
+            SqlCommand command = new SqlCommand("INSERT INTO [ORDER] (Supplier_ID, Product_ID, Date, Quantity_Ordered)" + "VALUES (@Supplier_ID, @Product_ID, @Date, @Quantity_Ordered)", con);
+            command.Parameters.AddWithValue("@Supplier_ID", osupplierid);
+            command.Parameters.AddWithValue("@Product_ID", oproductid);
+            command.Parameters.AddWithValue("@Date", odate);
+            command.Parameters.AddWithValue("@Quantity_Ordered", oquantity);
+            command.ExecuteNonQuery();
+        }
+
+        public void EditOrder(int oid, int osupplierid, int oproductid, DateTime odate, int oquantity)
+        {
+            if (SelectedOrder != null)
+            {
+                SqlConnection con = Methods.AccessDatabase();
+                SqlCommand command = new SqlCommand("UPDATE [ORDER] SET Supplier_ID = @Supplier_ID, Product_ID = @Product_ID, Date = @Date, Quantity_Ordered = @Quantity_Ordered WHERE Order_ID = " + oid, con);
+                command.Parameters.AddWithValue("@Supplier_ID", osupplierid);
+                command.Parameters.AddWithValue("@Product_ID", oproductid);
+                command.Parameters.AddWithValue("@Date", odate);
+                command.Parameters.AddWithValue("@Quantity_Ordered", oquantity);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteOrder(int oid)
+        {
+            if (SelectedOrder != null)
+            {
+                SqlConnection con = Methods.AccessDatabase();
+                SqlCommand command = new SqlCommand("DELETE FROM [ORDER] WHERE Order_ID = " + oid, con);
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

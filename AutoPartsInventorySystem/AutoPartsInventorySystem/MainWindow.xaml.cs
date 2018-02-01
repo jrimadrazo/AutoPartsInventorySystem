@@ -26,7 +26,6 @@ namespace AutoPartsInventorySystem
             this.tbProduct.DataContext = ViewModelLocator.ProductViewModel;
             this.tbSupplier.DataContext = ViewModelLocator.SupplierViewModel;
             this.tbOrder.DataContext = ViewModelLocator.OrderViewModel;
-            //this.gdProductInfo.DataContext = ViewModelLocator.ProductViewModel.SelectedProduct;
         }
 
         private void btnAddProductWindow_Click(object sender, RoutedEventArgs e)
@@ -70,5 +69,28 @@ namespace AutoPartsInventorySystem
             eowindow.Show();
             this.Close();
         }
+
+        private void btnDeleteProductWindow_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModelLocator.ProductViewModel.DeleteProduct(ViewModelLocator.ProductViewModel.SelectedProduct.ProductID);
+            ViewModelLocator.ProductViewModel.CreateProductList();
+        }
+
+        private void btnDeleteSupplierWindow_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModelLocator.SupplierViewModel.DeleteSupplier(ViewModelLocator.SupplierViewModel.SelectedSupplier.SupplierID);
+            ViewModelLocator.SupplierViewModel.CreateSupplierList();
+        }
+
+        private void btnDeleteOrderWindow_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModelLocator.OrderViewModel.DeleteOrder(ViewModelLocator.OrderViewModel.SelectedOrder.OrderID);
+            ViewModelLocator.OrderViewModel.CreateOrderList();
+        }
+
+        //private void btnAddProductWindow_MouseEnter(object sender, MouseEventArgs e)
+        //{
+            
+        //}
     }
 }

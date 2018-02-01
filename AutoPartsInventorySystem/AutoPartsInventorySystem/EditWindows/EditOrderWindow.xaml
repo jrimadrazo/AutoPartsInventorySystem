@@ -71,25 +71,29 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=SupplierID}" />
             <TextBox
                 x:Name="tbxEditProductID"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=ProductID}" />
             <DatePicker
                 x:Name="tbxEditDateOrdered"
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                SelectedDate="{Binding Path=DateOrdered}" />
             <TextBox
                 x:Name="tbxEditQuantityOrdered"
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="3"
-                FontSize="15" />
+                FontSize="15"
+                Text="{Binding Path=QuantityOrdered}" />
         </Grid>
         <StackPanel
             Grid.Row="2"
@@ -101,15 +105,17 @@
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnEditOrder_Click"
                 Content="Edit Order"
-                FontSize="15" Click="btnEditOrder_Click" />
+                FontSize="15" />
             <Button
                 x:Name="btnCancelEditOrder"
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnCancelEditOrder_Click"
                 Content="Cancel"
-                FontSize="15" Click="btnCancelEditOrder_Click" />
+                FontSize="15" />
         </StackPanel>
     </Grid>
 </Window>

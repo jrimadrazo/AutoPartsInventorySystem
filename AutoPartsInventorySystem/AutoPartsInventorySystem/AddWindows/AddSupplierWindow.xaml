@@ -73,15 +73,17 @@
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnAddSupplier_Click"
                 Content="Add Supplier"
-                FontSize="15" Click="btnAddSupplier_Click" />
+                FontSize="15" />
             <Button
                 x:Name="btnCancelAddSupplier"
                 Width="120"
                 Height="25"
                 Margin="3"
+                Click="btnCancelAddSupplier_Click"
                 Content="Cancel"
-                FontSize="15" Click="btnCancelAddSupplier_Click" />
+                FontSize="15" />
         </StackPanel>
     </Grid>
 </Window>
