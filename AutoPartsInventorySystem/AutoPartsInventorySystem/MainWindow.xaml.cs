@@ -23,74 +23,32 @@ namespace AutoPartsInventorySystem
         public MainWindow()
         {
             InitializeComponent();
-            this.tbProduct.DataContext = ViewModelLocator.ProductViewModel;
-            this.tbSupplier.DataContext = ViewModelLocator.SupplierViewModel;
-            this.tbOrder.DataContext = ViewModelLocator.OrderViewModel;
         }
 
-        private void btnAddProductWindow_Click(object sender, RoutedEventArgs e)
+        private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            var apwindow = new AddProductWindow();
-            apwindow.Show();
             this.Close();
         }
 
-        private void btnEditProductWindow_Click(object sender, RoutedEventArgs e)
+        private void btnOpenProductPage_Click(object sender, RoutedEventArgs e)
         {
-            var epwindow = new EditProductWindow();
-            epwindow.Show();
+            var opwindow = new ProductsPage();
+            opwindow.Show();
             this.Close();
         }
 
-        private void btnAddSupplierWindow_Click(object sender, RoutedEventArgs e)
+        private void btnOpenSupplierPage_Click(object sender, RoutedEventArgs e)
         {
-            var aswindow = new AddSupplierWindow();
-            aswindow.Show();
+            var oswindow = new SuppliersPage();
+            oswindow.Show();
             this.Close();
         }
 
-        private void btnEditSupplierWindow_Click(object sender, RoutedEventArgs e)
+        private void btnOpenOrderPage_Click(object sender, RoutedEventArgs e)
         {
-            var eswindow = new EditSupplierWindow();
-            eswindow.Show();
+            var oowindow = new OrdersPage();
+            oowindow.Show();
             this.Close();
         }
-
-        private void btnAddOrderWindow_Click(object sender, RoutedEventArgs e)
-        {
-            var aowindow = new AddOrderWindow();
-            aowindow.Show();
-            this.Close();
-        }
-
-        private void btnEditOrderWindow_Click(object sender, RoutedEventArgs e)
-        {
-            var eowindow = new EditOrderWindow();
-            eowindow.Show();
-            this.Close();
-        }
-
-        private void btnDeleteProductWindow_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModelLocator.ProductViewModel.DeleteProduct(ViewModelLocator.ProductViewModel.SelectedProduct.ProductID);
-            ViewModelLocator.ProductViewModel.CreateProductList();
-        }
-
-        private void btnDeleteSupplierWindow_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModelLocator.SupplierViewModel.DeleteSupplier(ViewModelLocator.SupplierViewModel.SelectedSupplier.SupplierID);
-            ViewModelLocator.SupplierViewModel.CreateSupplierList();
-        }
-
-        private void btnDeleteOrderWindow_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModelLocator.OrderViewModel.DeleteOrder(ViewModelLocator.OrderViewModel.SelectedOrder.OrderID);
-            ViewModelLocator.OrderViewModel.CreateOrderList();
-        }
-
-        //private void btnAddProductWindow_MouseEnter(object sender, MouseEventArgs e)
-        //{
-            
-        //}
     }
 }

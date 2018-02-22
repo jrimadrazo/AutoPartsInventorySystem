@@ -36,15 +36,15 @@ namespace AutoPartsInventorySystem
             ViewModelLocator.OrderViewModel.EditOrder(oid, osupplierid, oproductid, odate, oquantity);
             ViewModelLocator.OrderViewModel.CreateOrderList();
 
-            var mainwindow = new MainWindow();
-            mainwindow.Show();
+            var oowindow = new OrdersPage();
+            oowindow.Show();
             this.Close();
         }
 
         private void btnCancelEditOrder_Click(object sender, RoutedEventArgs e)
         {
-            var mainwindow = new MainWindow();
-            mainwindow.Show();
+            var oowindow = new OrdersPage();
+            oowindow.Show();
             this.Close();
         }
     }

@@ -32,15 +32,15 @@ namespace AutoPartsInventorySystem
             ViewModelLocator.SupplierViewModel.AddSupplier(sname, sdetails);
             ViewModelLocator.SupplierViewModel.CreateSupplierList();
 
-            var mainwindow = new MainWindow();
-            mainwindow.Show();
+            var oswindow = new SuppliersPage();
+            oswindow.Show();
             this.Close();
         }
 
         private void btnCancelAddSupplier_Click(object sender, RoutedEventArgs e)
         {
-            var mainwindow = new MainWindow();
-            mainwindow.Show();
+            var oswindow = new SuppliersPage();
+            oswindow.Show();
             this.Close();
         }
     }

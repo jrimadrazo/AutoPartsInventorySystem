@@ -36,15 +36,15 @@ namespace AutoPartsInventorySystem
             ViewModelLocator.ProductViewModel.AddProduct(pname, ptype, pquantity, pcolor, pbuyp, psellp);
             ViewModelLocator.ProductViewModel.CreateProductList();
 
-            var mainwindow = new MainWindow();
-            mainwindow.Show();
+            var opwindow = new ProductsPage();
+            opwindow.Show();
             this.Close();
         }
 
         private void btnCancelAddProduct_Click(object sender, RoutedEventArgs e)
         {
-            var mainwindow = new MainWindow();
-            mainwindow.Show();
+            var opwindow = new ProductsPage();
+            opwindow.Show();
             this.Close();
         }
     }

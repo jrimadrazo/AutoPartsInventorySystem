@@ -34,15 +34,15 @@ namespace AutoPartsInventorySystem
             ViewModelLocator.SupplierViewModel.EditSupplier(sid, sname, sdetails);
             ViewModelLocator.SupplierViewModel.CreateSupplierList();
 
-            var mainwindow = new MainWindow();
-            mainwindow.Show();
+            var oswindow = new SuppliersPage();
+            oswindow.Show();
             this.Close();
         }
 
         private void btnCancelEditSupplier_Click(object sender, RoutedEventArgs e)
         {
-            var mainwindow = new MainWindow();
-            mainwindow.Show();
+            var oswindow = new SuppliersPage();
+            oswindow.Show();
             this.Close();
         }
     }

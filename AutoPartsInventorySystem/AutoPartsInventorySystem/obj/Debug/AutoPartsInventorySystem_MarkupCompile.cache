@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\App.xaml
-7-742854443
+10-561838912
 21583633548
-19-1585282150
+22-257269840
 131569487696
-AddWindows\AddOrderWindow.xaml;AddWindows\AddProductWindow.xaml;AddWindows\AddSupplierWindow.xaml;EditWindows\EditOrderWindow.xaml;EditWindows\EditProductWindow.xaml;EditWindows\EditSupplierWindow.xaml;MainWindow.xaml;
+AddWindows\AddOrderWindow.xaml;AddWindows\AddProductWindow.xaml;AddWindows\AddSupplierWindow.xaml;EditWindows\EditOrderWindow.xaml;EditWindows\EditProductWindow.xaml;EditWindows\EditSupplierWindow.xaml;MainWindow.xaml;Pages\OrdersPage.xaml;Pages\ProductsPage.xaml;Pages\SuppliersPage.xaml;
 
 False
 

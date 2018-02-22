@@ -88,6 +88,15 @@
       <DependentUpon>EditSupplierWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Methods.cs" />
+    <Compile Include="Pages\OrdersPage.xaml.cs">
+      <DependentUpon>OrdersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductsPage.xaml.cs">
+      <DependentUpon>ProductsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SuppliersPage.xaml.cs">
+      <DependentUpon>SuppliersPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
@@ -129,6 +138,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\OrdersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SuppliersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ORDER.cs" />
@@ -174,5 +195,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

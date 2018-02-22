@@ -54,3 +54,9 @@ C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\
 C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\bin\Debug\Database\AutoPartsInventory.mdf
 C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\bin\Debug\Database\AutoPartsInventory_log.ldf
 C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\obj\Debug\AutoPartsInventorySystem_Content.g.cs
+C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\obj\Debug\Pages\OrdersPage.g.cs
+C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\obj\Debug\Pages\ProductsPage.g.cs
+C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\obj\Debug\Pages\SuppliersPage.g.cs
+C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\obj\Debug\Pages\OrdersPage.baml
+C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\obj\Debug\Pages\ProductsPage.baml
+C:\Users\jrimadrazo\Documents\AutoPartsInventorySystem\AutoPartsInventorySystem\obj\Debug\Pages\SuppliersPage.baml
