@@ -156,113 +156,150 @@
                 x:Name="gdProductInfo"
                 Grid.Column="2"
                 DataContext="{Binding Path=SelectedProduct}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <TextBlock
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Margin="3"
-                    HorizontalAlignment="Right"
-                    Text="Product ID: " />
-                <TextBlock
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Margin="3"
-                    HorizontalAlignment="Right"
-                    Text="Product Name: " />
-                <TextBlock
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Margin="3"
-                    HorizontalAlignment="Right"
-                    Text="Product Type: " />
-                <TextBlock
-                    Grid.Row="3"
-                    Grid.Column="0"
-                    Margin="3"
-                    HorizontalAlignment="Right"
-                    Text="Quantity: " />
-                <TextBlock
-                    Grid.Row="4"
-                    Grid.Column="0"
-                    Margin="3"
-                    HorizontalAlignment="Right"
-                    Text="Color: " />
-                <TextBlock
-                    Grid.Row="5"
-                    Grid.Column="0"
-                    Margin="3"
-                    HorizontalAlignment="Right"
-                    Text="Buying Price: " />
-                <TextBlock
-                    Grid.Row="6"
-                    Grid.Column="0"
-                    Margin="3"
-                    HorizontalAlignment="Right"
-                    Text="Selling Price: " />
-                <TextBlock
-                    x:Name="blkProductID"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Margin="3"
-                    Text="{Binding Path=ProductID}" />
-                <TextBlock
-                    x:Name="blkProductName"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Margin="3"
-                    Text="{Binding Path=ProductName}" />
-                <TextBlock
-                    x:Name="blkProductType"
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    Margin="3"
-                    Text="{Binding Path=ProductType}" />
-                <TextBlock
-                    x:Name="blkQuantity"
-                    Grid.Row="3"
-                    Grid.Column="1"
-                    Margin="3"
-                    Text="{Binding Path=ProductQuantity}" />
-                <TextBlock
-                    x:Name="blkColor"
-                    Grid.Row="4"
-                    Grid.Column="1"
-                    Margin="3"
-                    Text="{Binding Path=ProductColor}" />
-                <TextBlock
-                    x:Name="blkBuyingPrice"
-                    Grid.Row="5"
-                    Grid.Column="1"
-                    Margin="3"
-                    Text="{Binding Path=ProductBuyingPrice}" />
-                <TextBlock
-                    x:Name="blkSellingPrice"
-                    Grid.Row="6"
-                    Grid.Column="1"
-                    Margin="3"
-                    Text="{Binding Path=ProductSellingPrice}" />
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        x:Name="blkProductID"
+                        Grid.Column="0"
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Margin="3"
+                        Text="{Binding Path=ProductID, StringFormat={}{0:0000}}" />
+                    <TextBlock
+                        x:Name="blkProductName"
+                        Grid.Column="1"
+                        FontSize="25"
+                        Margin="3"
+                        Text="{Binding Path=ProductName}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="3"
+                        HorizontalAlignment="Right"
+                        Text="Type: " />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Margin="3"
+                        HorizontalAlignment="Right"
+                        Text="Quantity: " />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="3"
+                        HorizontalAlignment="Right"
+                        Text="Color: " />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="3"
+                        HorizontalAlignment="Center"
+                        Text="BUYING PRICE" />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        Margin="3"
+                        HorizontalAlignment="Center"
+                        Text="SELLING PRICE" />
+                    <TextBlock
+                        x:Name="blkProductType"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="3"
+                        Text="{Binding Path=ProductType}" />
+                    <Grid
+                        Grid.Row="0"
+                        Grid.Column="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            x:Name="blkQuantity"
+                            Grid.Column="0"
+                            Margin="3"
+                            Text="{Binding Path=ProductQuantity}" />
+                        <Border 
+                            Grid.Column="1"
+                            Margin="6, 3"
+                            Background="LightGray"
+                            BorderBrush="LightSlateGray"
+                            BorderThickness="1"
+                            CornerRadius="3">
+                            <Button 
+                                x:Name="btnAddProductStock" 
+                                Grid.Column="1"
+                                Background="Transparent"
+                                BorderThickness="0" Click="btnAddProductStock_Click">
+                                <Button.Content>
+                                    <Path 
+                                        Width="10"
+                                        Height="10"
+                                        Margin="3"
+                                        Stretch="Uniform"
+                                        Data="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" 
+                                        Fill="Black" />
+                                </Button.Content>
+                            </Button>
+                        </Border>
+                    </Grid>
+                    <TextBlock
+                        x:Name="blkColor"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="3"
+                        Text="{Binding Path=ProductColor}" />
+                    <TextBlock
+                        x:Name="blkBuyingPrice"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HorizontalAlignment="Center"
+                        Margin="3"
+                        Foreground="Red"
+                        FontSize="50"
+                        Text="{Binding Path=ProductBuyingPrice}" />
+                    <TextBlock
+                        x:Name="blkSellingPrice"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        HorizontalAlignment="Center"
+                        Margin="3"
+                        Foreground="Green"
+                        FontSize="50"
+                        Text="{Binding Path=ProductSellingPrice}" />
+                </Grid>
                 <StackPanel
-                    Grid.Row="7"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
+                    Grid.Row="2"
                     Margin="3"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
                     Orientation="Horizontal">
-
                     <Border
                         Height="30"
                         Margin="3"
@@ -288,8 +325,6 @@
                             </Button.Content>
                         </Button>
                     </Border>
-
-
                 </StackPanel>
             </Grid>
         </Grid>

@@ -13,102 +13,146 @@
     WindowStyle="None"
     mc:Ignorable="d">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".5*" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <ListBox
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Margin="3"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                FontSize="20"
+                Text="TRANSACTIONS" />
+            <Border
+                Grid.Column="1"
+                Margin="3"
+                    Height="30"
+                    Background="LightGray"
+                    BorderBrush="LightSlateGray"
+                    BorderThickness="1"
+                    CornerRadius="3">
+                <Button
+                        x:Name="btnReturnOrderWindow"
+                        Background="Transparent"
+                        BorderThickness="0"
+                    Margin="3"
+                        Click="btnReturnOrderWindow_Click">
+                    <Button.Content>
+                        <Path
+                                Width="20"
+                                Height="20"
+                                Margin="3"
+                                Data="M19,7V11H5.83L9.41,7.41L8,6L2,12L8,18L9.41,16.58L5.83,13H21V7H19Z"
+                                Fill="Black"
+                                Stretch="Uniform"
+                                UseLayoutRounding="False" />
+                    </Button.Content>
+                </Button>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ListBox
             x:Name="lbOrderData"
             Grid.Column="0"
             Margin="3"
             ItemsSource="{Binding Path=OrderList}"
             SelectedItem="{Binding Path=SelectedOrder}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Path=DateOrdered, StringFormat={}{0:dd MMM yyyy}}" />
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <GridSplitter
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=DateOrdered, StringFormat={}{0:dd MMM yyyy}}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <GridSplitter
             Grid.Column="1"
             Width="2"
             Margin="0,3"
             HorizontalAlignment="Stretch" />
-        <Grid Grid.Column="2" DataContext="{Binding Path=SelectedOrder}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <TextBlock
+            <Grid Grid.Column="2" DataContext="{Binding Path=SelectedOrder}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock
                 Grid.Row="0"
                 Grid.Column="0"
                 Margin="3"
                 HorizontalAlignment="Right"
                 Text="Order ID: " />
-            <TextBlock
+                <TextBlock
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="3"
                 HorizontalAlignment="Right"
                 Text="Product ID: " />
-            <TextBlock
+                <TextBlock
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="3"
                 HorizontalAlignment="Right"
                 Text="Supplier ID: " />
-            <TextBlock
+                <TextBlock
                 Grid.Row="3"
                 Grid.Column="0"
                 Margin="3"
                 HorizontalAlignment="Right"
                 Text="Date: " />
-            <TextBlock
+                <TextBlock
                 Grid.Row="4"
                 Grid.Column="0"
                 Margin="3"
                 HorizontalAlignment="Right"
                 Text="Quantity: " />
-            <TextBlock
+                <TextBlock
                 x:Name="blkOrderID"
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="3"
                 Text="{Binding Path=OrderID}" />
-            <TextBlock
+                <TextBlock
                 x:Name="blkOProductID"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="3"
                 Text="{Binding Path=ProductID}" />
-            <TextBlock
+                <TextBlock
                 x:Name="blkOSupplierID"
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="3"
                 Text="{Binding Path=SupplierID}" />
-            <TextBlock
+                <TextBlock
                 x:Name="blkOrderDat"
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="3"
                 Text="{Binding Path=DateOrdered, StringFormat={}{0:dd MMM yyyy}}" />
-            <TextBlock
+                <TextBlock
                 x:Name="blkOrderQuantity"
                 Grid.Row="4"
                 Grid.Column="1"
                 Margin="3"
                 Text="{Binding Path=QuantityOrdered}" />
-            <StackPanel
+                <StackPanel
                 Grid.Row="5"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
@@ -116,19 +160,19 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
                 Orientation="Horizontal">
-                <Border
+                    <Border
                     Height="30"
                     Background="LightGray"
                     BorderBrush="LightSlateGray"
                     BorderThickness="1,1,0,1"
                     CornerRadius="3,0,0,3">
-                    <Button
+                        <Button
                         x:Name="btnAddOrderWindow"
                         Background="Transparent"
                         BorderThickness="0"
                         Click="btnAddOrderWindow_Click">
-                        <Button.Content>
-                            <Path
+                            <Button.Content>
+                                <Path
                                 Width="20"
                                 Height="20"
                                 Margin="3,0"
@@ -136,21 +180,21 @@
                                 Fill="Black"
                                 Stretch="Uniform"
                                 UseLayoutRounding="False" />
-                        </Button.Content>
-                    </Button>
-                </Border>
-                <Border
+                            </Button.Content>
+                        </Button>
+                    </Border>
+                    <Border
                     Height="30"
                     Background="LightGray"
                     BorderBrush="LightSlateGray"
                     BorderThickness="1">
-                    <Button
+                        <Button
                         x:Name="btnEditOrderWindow"
                         Background="Transparent"
                         BorderThickness="0"
                         Click="btnEditOrderWindow_Click">
-                        <Button.Content>
-                            <Path
+                            <Button.Content>
+                                <Path
                                 Width="20"
                                 Height="20"
                                 Margin="3,0"
@@ -158,56 +202,37 @@
                                 Fill="Black"
                                 Stretch="Uniform"
                                 UseLayoutRounding="False" />
-                        </Button.Content>
-                    </Button>
-                </Border>
-                <Border
+                            </Button.Content>
+                        </Button>
+                    </Border>
+                    <Border
                     Height="30"
+                        Margin="3"
                     Background="LightGray"
                     BorderBrush="LightSlateGray"
-                    BorderThickness="0,1,1,1"
-                    CornerRadius="0,3,3,0">
-                    <Button
+                    BorderThickness="1"
+                    CornerRadius="3">
+                        <Button
                         x:Name="btnDeleteOrderWindow"
                         Background="Transparent"
                         BorderThickness="0"
+                            Margin="3"
                         Click="btnDeleteOrderWindow_Click">
-                        <Button.Content>
-                            <Path
+                            <Button.Content>
+                                <Path
                                 Width="20"
                                 Height="20"
                                 Margin="3,0"
-                                Data="F1 M 69,6.00098C 70.6582,6.00098 72,7.34473 72,9.00098C 72,10.6572 70.6582,12.001 69,12.001L 3,12.001C 1.34277,12.001 0,10.6572 0,9.00098C 0,7.34473 1.34277,6.00098 3,6.00098L 18,6.00098L 18,3.00098C 18,1.34473 19.3428,0.000976563 21,0.000976563L 51,0.000976563C 52.6582,0.000976563 54,1.34473 54,3.00098L 54,6.00098L 69,6.00098 Z M 48.8564,72.001L 53.999,66.8564L 41.1426,54.001L 53.999,41.1455L 48.8564,36.001L 36,48.8584L 23.1426,36.001L 17.999,41.1465L 30.8564,54.001L 18,66.8574L 23.1426,72.001L 35.999,59.1436L 48.8564,72.001 Z M 5.99902,90.001L 5.99902,18.001L 65.999,18.001L 65.999,90.001L 5.99902,90.001 Z "
+                                Data="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z"
                                 Fill="Black"
                                 Stretch="Uniform"
                                 UseLayoutRounding="False" />
-                        </Button.Content>
-                    </Button>
-                </Border>
-                <Border
-                    Height="30"
-                    Background="LightGray"
-                    BorderBrush="LightSlateGray"
-                    BorderThickness="0,1,1,1"
-                    CornerRadius="0,3,3,0">
-                    <Button
-                        x:Name="btnReturnOrderWindow"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Click="btnReturnOrderWindow_Click">
-                        <Button.Content>
-                            <Path
-                                Width="20"
-                                Height="20"
-                                Margin="3,0"
-                                Data="F1 M 69,6.00098C 70.6582,6.00098 72,7.34473 72,9.00098C 72,10.6572 70.6582,12.001 69,12.001L 3,12.001C 1.34277,12.001 0,10.6572 0,9.00098C 0,7.34473 1.34277,6.00098 3,6.00098L 18,6.00098L 18,3.00098C 18,1.34473 19.3428,0.000976563 21,0.000976563L 51,0.000976563C 52.6582,0.000976563 54,1.34473 54,3.00098L 54,6.00098L 69,6.00098 Z M 48.8564,72.001L 53.999,66.8564L 41.1426,54.001L 53.999,41.1455L 48.8564,36.001L 36,48.8584L 23.1426,36.001L 17.999,41.1465L 30.8564,54.001L 18,66.8574L 23.1426,72.001L 35.999,59.1436L 48.8564,72.001 Z M 5.99902,90.001L 5.99902,18.001L 65.999,18.001L 65.999,90.001L 5.99902,90.001 Z "
-                                Fill="Black"
-                                Stretch="Uniform"
-                                UseLayoutRounding="False" />
-                        </Button.Content>
-                    </Button>
-                </Border>
-            </StackPanel>
+                            </Button.Content>
+                        </Button>
+                    </Border>
+                    
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

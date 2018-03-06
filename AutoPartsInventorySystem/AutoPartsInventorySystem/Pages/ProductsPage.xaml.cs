@@ -51,5 +51,12 @@ namespace AutoPartsInventorySystem
             mainwindow.Show();
             this.Close();
         }
+
+        private void btnAddProductStock_Click(object sender, RoutedEventArgs e)
+        {
+            //var aowindow = new AddOrderWindow();
+            //aowindow.Show();
+            //this.Close();
+        }
     }
 }
